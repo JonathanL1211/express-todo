@@ -16,7 +16,12 @@ class Home extends React.Component {
                     <p>Days to complete: </p>
                     <input type="text" name="days"/>
                     <p>Status: </p>
-                    <input type="text" name="status"/>
+                    <select name="status">
+                    <option value="select">Select one option...</option>
+                    <option value="completed">Completed</option>
+                    <option value="inProgress">In-progress</option>
+                    <option value="haventStart">Haven't Start</option>
+                    </select>
                     <br/>
                     <br/>
                     <input type="submit" value="Submit"/>
