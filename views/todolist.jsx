@@ -9,6 +9,7 @@ class TodoList extends React.Component{
                     <h4>Task: {this.props.todo.task}</h4>
                     <p>Days to completion: {this.props.todo.daysCompletion}</p>
                     <p>Status Code: {this.props.todo.status}</p>
+                    <p>Date: {this.props.todo.time}</p>
                 </li>
             )
     }
@@ -16,7 +17,7 @@ class TodoList extends React.Component{
 
 class Todo extends React.Component {
   render() {
-    console.log("THIS.PROPS IN TODO CLASS IS: ", this.props);
+    console.log("THIS.PROPS IN TODO CLASS IS: ", this.props.task);
     const displayToDoList = this.props.task.map( mapList => {
         return <TodoList todo={mapList} />
     })

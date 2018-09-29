@@ -34,11 +34,13 @@ app.get('/', (req, res) =>{
 app.post('/todo', (req, res) =>{
     //console.log(req.body);
     var reqOrd = req.body;
+    let currentDate = new Date().toLocaleString();
     //const obj = req.body;
     let tasksObj = {
         task: reqOrd['task'],
         daysCompletion: parseInt(reqOrd['days']),
-        status: reqOrd['status']
+        status: reqOrd['status'],
+        time: currentDate
     }
 
     jsonfile.readFile(FILE, (err,obj)=>{
