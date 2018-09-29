@@ -17,9 +17,8 @@ class Home extends React.Component {
                     <p>Status: </p>
                     <select name="status" required>
                     <option value="">Select one option...</option>
-                    <option value="completed">Completed</option>
-                    <option value="inProgress">In-progress</option>
                     <option value="haventStart">Haven't Start</option>
+                    <option value="inProgress">In-progress</option>
                     </select>
                     <br/>
                     <br/>
