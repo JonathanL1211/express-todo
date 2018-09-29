@@ -22,7 +22,7 @@ class Home extends React.Component {
                     </select>
                     <br/>
                     <br/>
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Add Task" />
                 </form>
             </div>
         </DefaultLayout>
