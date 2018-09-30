@@ -32,18 +32,19 @@ app.get('/', (req, res) =>{
 })
 
 app.post('/todo', (req, res) =>{
-    //console.log(req.body);
-    var reqOrd = req.body;
-    let currentDate = new Date().toLocaleString();
-    //const obj = req.body;
-    let tasksObj = {
-        task: reqOrd['task'],
-        daysCompletion: parseInt(reqOrd['days']),
-        status: reqOrd['status'],
-        time: currentDate
-    }
 
     jsonfile.readFile(FILE, (err,obj)=>{
+        console.log(req.body);
+        var reqOrd = req.body;
+        let currentDate = new Date().toLocaleString();
+        //const obj = req.body;
+        let tasksObj = {
+            id: obj.task.length + 1,
+            task: reqOrd['task'],
+            daysCompletion: parseInt(reqOrd['days']),
+            status: reqOrd['status'],
+            time: currentDate
+        }
         obj['task'].push(tasksObj);
         var listObj = obj['task'];
         //console.log(obj);
@@ -57,8 +58,20 @@ app.post('/todo', (req, res) =>{
     })
 })
 
+// let checked = () =>{
+//         document.getElementById('task').checked = true;
+//     }
 
+//     if(checked()){
+//         this.props.todo['status'] = "completed";
+//     }
 
+// app.delete('/deletedTasks', (req, res) => {
+//     jsonfile.readFile( file, (err, obj) => {
+//       // console.log( "obj:",obj );
+//       console.log( "err:",err );
+
+// })
 
 
 app.listen(3000, () => console.log('~~~ Tuning in to the waves of port 3000 ~~~'));
